@@ -12,6 +12,8 @@
 
 #include <sstream> // for end message
 
+#define BORDER '*'
+
 struct Answer
 {
 	Answer() = default;
@@ -149,7 +151,8 @@ int main()
 	std::stringstream message;
 	message << "End of quiz! You scored " << score << " point" << (score == 1 ? "." : "s.");
 
-	std::cout << "######################" << std::endl << message.str() << std::endl;
+	int strlen = message.str().length() + 2; // +2 for border
+	std::cout << std::string(strlen, BORDER) << "\n" << BORDER << message.str() << BORDER <<"\n" << std::string(strlen, BORDER) << std::endl;
 
 #ifdef _DEBUG
 	system("pause");
