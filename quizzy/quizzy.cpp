@@ -10,11 +10,14 @@
 #include <algorithm> // shuffle
 #include <random>
 
+#include <sstream> // for end message
+
 struct Answer
 {
 	Answer() = default;
 	Answer(std::string txt, bool correct) { this->txt = txt; this->correct = correct; }
 	std::string txt = "";
+	char letter = '?'; // this is set in answering time
 	bool correct = false;
 };
 
@@ -95,16 +98,58 @@ int main()
 	
 	const char alphabet[27] = "abcdefghijklmnopqrstuvwxyz"; // I dont think anybody will put more than 26 answers
 
+	int score = 0; 
+
 	for (unsigned int i = 0; i < questions.size(); i++)
 	{
 		std::cout << "Question #" << i << std::endl << questions[i].txt << std::endl << std::endl;
 		// print answers
 		for (unsigned int j = 0; j < questions[i].answers.size(); j++)
-			std::cout << alphabet[j] << ") " << questions[i].answers[j].txt << std::endl;
+		{
+			std::cout << alphabet[j] << ") " << questions[i].answers[j].txt << std::endl; // print answer
+			questions[i].answers[j].letter = alphabet[j]; // assign the answer a letter so we can find it again
+		}
 
-		std::cout << std::endl << std::endl;
+		for (;;)
+		{
+			char ans;
+			std::cout << "answer? ";
+			std::cin >> ans;
+
+			// check if its an answer
+			for (auto k : questions[i].answers) // use this for loop because dontneedto track iterator
+			{
+				if (k.letter == ans) // found an answer!
+				{
+					std::cout << std::endl; // newline
+					if (k.correct)
+					{
+						std::cout << "Correct, my guy!" << std::endl;
+						score+=2;
+					}
+					else
+					{
+						std::cout << "Wrong!" << std::endl;
+						score--;
+					}
+					goto nextquestion; // double break out
+				}
+			}
+			
+			// here is reached if incorrect answer
+			std::cout << "come on dude..." << std::endl;
+		}
+		nextquestion:
+
+		std::cout << "---" << std::endl;
 
 	}
+
+	// End of quiz, now we have score
+	std::stringstream message;
+	message << "End of quiz! You scored " << score << " point" << (score == 1 ? "." : "s.");
+
+	std::cout << "######################" << std::endl << message.str() << std::endl;
 
 #ifdef _DEBUG
 	system("pause");
