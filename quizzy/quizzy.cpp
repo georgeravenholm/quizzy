@@ -70,7 +70,7 @@ int main()
 				else if (str[0] == '#') continue; // allow for comments
 				else if (str[0] == '\n') continue; // skip newlines
 
-				else if (str == "questionend:") break; // get outa here!
+				else if (str == "questionend:") { std::getline(file, str); break; } // get outa here! (also move to next line)
 
 			}
 
@@ -82,12 +82,29 @@ int main()
 		else if (str == "quizend:") goto heck;
 		else if (str == "null:") continue;
 		else if (str[0] == '#') continue; // allow for comments
-		else if (str[0] == '\n') continue; // skip newlines
+		else if (str[0] == '\n' || str == "") continue; // skip newlines
+		else if (!file.good()) { std::cerr << "missing end of file!" << std::endl; return 2; }
 
-		std::cout << str << std::endl;
+		//std::cout << str << std::endl;
 	}
 	
 	heck: 
+
+	////////////////////////////// ANSWERING /////////////////////////////
+	std::cout << "Question file loaded!" << std::endl;
+	
+	char alphabet[27] = "abcdefghijklmnopqrstuvwxyz";
+
+	for (unsigned int i = 0; i < questions.size(); i++)
+	{
+		std::cout << "Question #" << i << std::endl << questions[i].txt << std::endl << std::endl;
+		// print answers
+		for (unsigned int j = 0; j < questions[i].answers.size(); j++)
+			std::cout << alphabet[j] << ") " << questions[i].answers[j].txt << std::endl;
+
+		std::cout << std::endl << std::endl;
+
+	}
 
 #ifdef _DEBUG
 	system("pause");
