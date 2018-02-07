@@ -93,7 +93,7 @@ int main()
 	////////////////////////////// ANSWERING /////////////////////////////
 	std::cout << "Question file loaded!" << std::endl;
 	
-	char alphabet[27] = "abcdefghijklmnopqrstuvwxyz";
+	const char alphabet[27] = "abcdefghijklmnopqrstuvwxyz"; // I dont think anybody will put more than 26 answers
 
 	for (unsigned int i = 0; i < questions.size(); i++)
 	{
