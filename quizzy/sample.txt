@@ -1,0 +1,34 @@
+quiz:
+# This is a comment
+# this example quiz was made by georgeravenhomes!!! exde
+
+question:
+the answer is pineapple
+
+correct:
+pineapple
+
+wrong:
+meme
+
+wrong:
+exdee
+
+wrong:
+meme
+questionend:
+
+question:
+the answer is a teste
+
+correct:
+teste
+
+correct:
+testes
+
+wrong:
+exdee
+questionend:
+
+quizend:

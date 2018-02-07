@@ -136,6 +136,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="..\..\..\%40projects\quizzy\quizzy\ReadMe.txt" />
+    <Text Include="..\..\..\%40projects\quizzy\quizzy\sample.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\%40projects\quizzy\quizzy\stdafx.h" />
