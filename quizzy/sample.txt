@@ -2,33 +2,31 @@ quiz:
 # This is a comment
 # this example quiz was made by georgeravenhomes!!! exde
 
-question:
+question:   
 the answer is pineapple
+	correct:
+	pineapple
 
-correct:
-pineapple
+	wrong:
+	meme
 
-wrong:
-meme
+	wrong:
+	exdee
 
-wrong:
-exdee
-
-wrong:
-meme
+	wrong:
+	meme
 questionend:
 
 question:
 the answer is a teste
+	correct:
+	teste
 
-correct:
-teste
+	correct:
+	testes
 
-correct:
-testes
-
-wrong:
-exdee
+	wrong:
+	exdee
 questionend:
 
 quizend:

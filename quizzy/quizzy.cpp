@@ -37,6 +37,22 @@ struct Question
 	std::vector<Answer> answers;
 };
 
+void TrimString(std::string & str)
+{
+	// thanks stack overflow
+	size_t endpos = str.find_last_not_of(" \t");
+	size_t startpos = str.find_first_not_of(" \t");
+	if (std::string::npos != endpos)
+	{
+		str = str.substr(0, endpos + 1);
+		str = str.substr(startpos);
+	}
+	else
+	{
+		str.erase(std::remove(std::begin(str), std::end(str), ' '), std::end(str));
+	}
+}
+
 int main()
 {
 	// read file
@@ -49,10 +65,12 @@ int main()
 
 	// check first line
 	std::getline(file, str);
+	TrimString(str);
 	if (str != "quiz:") { std::cerr << "invalid quiz file"; return 1; }
 
 	while (std::getline(file, str))
 	{
+		TrimString(str);
 		
 		if (str == "question:")
 		{
@@ -62,6 +80,7 @@ int main()
 			
 			while (std::getline(file, str) ) // scan for all answers
 			{
+				TrimString(str);
 				if (str == "correct:" || str == "wrong:")
 				{
 					bool correct = str == "correct:"; // see if this is a correct or wrong answer
