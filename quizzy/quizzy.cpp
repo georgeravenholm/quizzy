@@ -93,7 +93,13 @@ int main()
 		//std::cout << str << std::endl;
 	}
 	
-	heck: 
+heck: 
+
+	// Shuffle questions
+	std::random_device rd;
+	std::mt19937 g(rd());
+
+	std::shuffle(questions.begin(), questions.end(), g);
 
 	////////////////////////////// ANSWERING /////////////////////////////
 	std::cout << "Question file loaded!" << std::endl;
