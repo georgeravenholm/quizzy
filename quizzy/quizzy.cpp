@@ -53,10 +53,22 @@ void TrimString(std::string & str)
 	}
 }
 
-int main()
+int main(int argc, char* argv[])
 {
-	// read file
+	// read file from command arguments
+#ifdef _DEBUG
 	std::ifstream file("sample.txt");
+#else
+	if (argc < 2) // no aruments dude
+	{
+		std::cerr << "usage: quizzy <filename>" << std::endl;
+		return 0xff;
+	}
+	std::string filename = argv[1]; // problem before that it was dereferencing a null pointer because invalid
+									// open your eyes!
+	std::ifstream file( filename );
+#endif
+
 	if (!file) {std::cerr << "file error"; return 1;}
 
 	// parse file
