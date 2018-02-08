@@ -102,7 +102,7 @@ heck:
 	std::shuffle(questions.begin(), questions.end(), g);
 
 	////////////////////////////// ANSWERING /////////////////////////////
-	std::cout << "Question file loaded!" << std::endl;
+	//std::cout << "Question file loaded!" << std::endl;
 	
 	const char alphabet[27] = "abcdefghijklmnopqrstuvwxyz"; // I dont think anybody will put more than 26 answers
 
@@ -118,6 +118,7 @@ heck:
 			questions[i].answers[j].letter = alphabet[j]; // assign the answer a letter so we can find it again
 		}
 
+		// get users answer
 		for (;;)
 		{
 			char ans;
