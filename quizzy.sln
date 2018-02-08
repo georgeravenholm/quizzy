@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "quizzy", "quizzy\quizzy.vcxproj", "{64736806-738D-46E4-8F38-1D85FF01AD81}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "quizmaker", "quizmaker\quizmaker.vcxproj", "{8EE3D81E-8E5E-40CB-9F77-41B6C275B877}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{64736806-738D-46E4-8F38-1D85FF01AD81}.Release|x64.Build.0 = Release|x64
 		{64736806-738D-46E4-8F38-1D85FF01AD81}.Release|x86.ActiveCfg = Release|Win32
 		{64736806-738D-46E4-8F38-1D85FF01AD81}.Release|x86.Build.0 = Release|Win32
+		{8EE3D81E-8E5E-40CB-9F77-41B6C275B877}.Debug|x64.ActiveCfg = Debug|x64
+		{8EE3D81E-8E5E-40CB-9F77-41B6C275B877}.Debug|x64.Build.0 = Debug|x64
+		{8EE3D81E-8E5E-40CB-9F77-41B6C275B877}.Debug|x86.ActiveCfg = Debug|Win32
+		{8EE3D81E-8E5E-40CB-9F77-41B6C275B877}.Debug|x86.Build.0 = Debug|Win32
+		{8EE3D81E-8E5E-40CB-9F77-41B6C275B877}.Release|x64.ActiveCfg = Release|x64
+		{8EE3D81E-8E5E-40CB-9F77-41B6C275B877}.Release|x64.Build.0 = Release|x64
+		{8EE3D81E-8E5E-40CB-9F77-41B6C275B877}.Release|x86.ActiveCfg = Release|Win32
+		{8EE3D81E-8E5E-40CB-9F77-41B6C275B877}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
