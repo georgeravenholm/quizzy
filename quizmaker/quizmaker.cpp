@@ -12,7 +12,7 @@ int main()
 	std::cout << "QUIZZY quiz maker 9000" << std::endl;
 	std::cout << "enter file's name to make: ";
 	std::string filename;
-	std::cin >> filename;
+	std::getline(std::cin, filename);
 
 	std::ofstream file(filename, std::ofstream::trunc);
 
@@ -26,7 +26,7 @@ int main()
 	{
 		main:
 		std::cout << "new (q)uestion or (f)inished?" << std::endl;
-		input = getch();
+		input = _getch();
 
 		switch (input)
 		{
@@ -36,24 +36,24 @@ int main()
 
 		case 'q': // QUESTION
 
-			std::cout << "enter question: ";
-			std::cin >> sinput;
+			std::cout << std::endl << "enter question: ";
+			std::getline( std::cin , sinput );
 			file << "question:\n" << sinput << "\n";
 
 			for (;;)
 			{
 				std::cout << "new (c)orrect answer or (w)rong answer or (d)one?" << std::endl;
-				input = getch();
+				input = _getch();
 				switch (input)
 				{
 				case 'c': // CORRECT ANSWER
-					std::cout << "enter CORECT answer: ";
-					std::cin >> sinput;
+					std::cout << std::endl << "enter CORECT answer: ";
+					std::getline(std::cin, sinput);
 					file << "correct:\n" << sinput << "\n";
 					break;
 				case 'w': // WRONG ANSWER
-					std::cout << "enter WRONGE answer: ";
-					std::cin >> sinput;
+					std::cout << std::endl << "enter WRONGE answer: ";
+					std::getline(std::cin, sinput);
 					file << "wrong:\n" << sinput << "\n";
 					break;
 				case 'd': // DONE
