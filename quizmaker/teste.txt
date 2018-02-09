@@ -1,0 +1,16 @@
+quiz:
+question:
+what
+correct:
+is
+correct:
+life?
+correct:
+42
+wrong:
+69
+questionend:
+
+
+
+quizend:
